@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     public Main() {
     }
 
@@ -30,7 +30,7 @@ public class Main {
 
     }
 
-    public static void OutputListFile(List<Fan> t, PrintWriter q) {
+    public static void OutputListFile(List<Student> t, PrintWriter q) {
         Iterator var2 = t.iterator();
 
         while(var2.hasNext()) {
@@ -47,21 +47,21 @@ public class Main {
         System.out.print("Add how many students: ");
         int n = sc.nextInt();
         sc.nextLine();
-        int xCode = 0;
-        String xName = "";
-        String xCourse = null;
+        int searchCode = 0;
+        String searchName = null;
+        String searchCourse = null;
 
         int tc;
         for(tc = 0; tc < n; ++tc) {
             System.out.print("Enter student name: ");
-            xName = sc.nextLine();
+            searchName = sc.nextLine();
             System.out.print("Enter student Code: ");
-            xCode = sc.nextInt();
+            searchCode = sc.nextInt();
             System.out.println("Enter student course: ");
-            xCourse = sc.nextLine();
+            searchCourse = sc.nextLine().toUpperCase();
             sc.nextLine();
-            t.add(new Student(xName, xCode,xCourse));
-            h.add(new Student(xName, xCode,xCourse));
+            t.add(new Student(searchName, searchCode,searchCourse));
+            h.add(new Student(searchName, searchCode,searchCourse));
         }
 
         System.out.print("Enter TC(1-f1;2-f2;3-f3): ");
@@ -74,19 +74,23 @@ public class Main {
         t.add(1, new Student("Truong", 216, "PRO192"));
         t.add(2, new Student("Manh", 246, "PRO192"));
         t.add(3, new Student("Toan", 101, "MAD101"));
-        System.out.println("The list before running f1:");
+        System.out.println("\nThe list before running f1:");
+        System.out.println("===========================");
         OutputList(t);
         switch (tc) {
             case 1:
-                System.out.print("Enter xCode: ");
+                System.out.println("===========================");
+                System.out.print("Enter searchCode: ");
                 givenCode = sc.nextInt();
                 break;
             case 2:
-                System.out.println("Enter Course:");
-                givenCourse = sc.nextLine();
+                System.out.println("===========================");
+                System.out.print("Enter Course: ");
+                givenCourse = sc.nextLine().toUpperCase();
                 break;
             case 3:
-                System.out.println("Enter xCode: ");
+                System.out.println("===========================");
+                System.out.print("Enter searchCode: ");
                 givenCode = sc.nextInt();
                 break;
         }
@@ -96,12 +100,11 @@ public class Main {
         switch (tc) {
             case 1:
                 u.f1(t, givenCode);
-                OutputList(t);
+//                OutputList(t);
                 break;
             case 2:
-                int count = u.f2(t, givenCourse);
-                OutputList(t);
-                System.out.printf("%d\r\n", count);
+                u.f2(t, givenCourse);
+//                OutputList(t);
                 break;
             case 3:
                 u.f3(t,givenCode);
