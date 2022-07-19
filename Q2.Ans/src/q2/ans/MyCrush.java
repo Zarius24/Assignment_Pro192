@@ -46,6 +46,7 @@ public class MyCrush extends Crush {
             for(i =1; i<tk.length;i++){
                 ten += tk[i]+ " ";
             }
+            ten = ten.substring(0,ten.length()-1);
             return result + "||Ten:"+ten;
         }
         
