@@ -37,12 +37,12 @@ public class FptStudent implements IStudent {
                 sameCourse.add(s);
             }
         }
-        for (int i = t.size() - 1; i >= 0; i--) {
+        for (int i = sameCourse.size() - 1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
-                int s1 = t.get(j).getCode();
-                int s2 = t.get(j + 1).getCode();
-                if (s1 < s2) {
-                    Collections.swap(t, j, j + 1);
+                int code1 = sameCourse.get(j).code;
+                int code2 = sameCourse.get(j+1).code;
+                if(code1 < code2) {
+                    Collections.swap(sameCourse, j, j+1);
                 }
             }
         }
