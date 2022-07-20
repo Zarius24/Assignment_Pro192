@@ -36,7 +36,6 @@ public class MyCrush extends Crush {
     public String specName(String str){
         String [] tk = str.split("[\\s+]");
         String result, ten="";
-        int counter = 0;
         int i;
         if(tk.length ==1 ){
             return "Ten: "+ tk[0];
