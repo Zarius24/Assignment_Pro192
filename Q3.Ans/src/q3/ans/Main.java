@@ -74,7 +74,7 @@ public class Main{
         t.add(1, new Student("Truong", 216, "PRO192"));
         t.add(2, new Student("Manh", 246, "PRO192"));
         t.add(3, new Student("Toan", 101, "MAD101"));
-        System.out.println("\nThe list before running f1:");
+        System.out.println("\nThe list before running:");
         System.out.println("===========================");
         OutputList(t);
         switch (tc) {
